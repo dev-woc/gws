@@ -2,9 +2,6 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-	// Check for Neon Auth session cookie
-	// The cookie name varies: __Secure-neon-auth.session_token on HTTPS,
-	// neon-auth.session_token on HTTP localhost
 	const allCookies = request.cookies.getAll();
 	const sessionCookie = allCookies.find(c => c.name.includes("neon-auth.session_token"));
 
@@ -18,5 +15,5 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-	matcher: ["/editor", "/editor/:path*", "/analytics", "/analytics/:path*", "/settings", "/settings/:path*"],
+	matcher: ["/dashboard", "/dashboard/:path*"],
 };
