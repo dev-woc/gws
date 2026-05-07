@@ -15,19 +15,25 @@ const STATUS_COUNTS = [
 	{ key: "closed", label: "Closed" },
 ] as const;
 
+const SOURCE_FILTERS = [
+	{ key: "all", label: "All" },
+	{ key: "consultation", label: "Consultations" },
+	{ key: "inquiry", label: "Inquiries" },
+] as const;
+
 export default async function LeadsPage({
 	searchParams,
 }: {
-	searchParams: Promise<{ status?: string }>;
+	searchParams: Promise<{ status?: string; source?: string }>;
 }) {
-	const { status } = await searchParams;
+	const { status, source } = await searchParams;
 
 	const allLeads = await db
 		.select()
 		.from(contactSubmissions)
 		.orderBy(desc(contactSubmissions.createdAt));
 
-	const counts = {
+	const statusCounts = {
 		all: allLeads.length,
 		new: allLeads.filter((l) => l.status === "new").length,
 		contacted: allLeads.filter((l) => l.status === "contacted").length,
@@ -35,39 +41,79 @@ export default async function LeadsPage({
 		closed: allLeads.filter((l) => l.status === "closed").length,
 	};
 
-	const filtered =
-		status && status !== "all" ? allLeads.filter((l) => l.status === status) : allLeads;
+	const sourceCounts = {
+		all: allLeads.length,
+		consultation: allLeads.filter((l) => l.source === "consultation").length,
+		inquiry: allLeads.filter((l) => l.source === "inquiry").length,
+	};
+
+	const filtered = allLeads.filter((l) => {
+		const statusMatch = !status || status === "all" || l.status === status;
+		const sourceMatch = !source || source === "all" || l.source === source;
+		return statusMatch && sourceMatch;
+	});
+
+	function filterHref(params: { status?: string; source?: string }) {
+		const p = new URLSearchParams();
+		if (params.status && params.status !== "all") p.set("status", params.status);
+		if (params.source && params.source !== "all") p.set("source", params.source);
+		const qs = p.toString();
+		return qs ? `/admin/leads?${qs}` : "/admin/leads";
+	}
 
 	return (
 		<div>
 			<div className="mb-6 flex items-center justify-between">
 				<h1 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-navy">
-					Contact Leads
+					Leads
 				</h1>
 				<span className="text-sm text-charcoal/50">{allLeads.length} total</span>
 			</div>
 
-			{/* Status filter tabs */}
+			{/* Source filter */}
+			<div className="flex gap-2 mb-3 flex-wrap">
+				{SOURCE_FILTERS.map(({ key, label }) => (
+					<a
+						key={key}
+						href={filterHref({ status, source: key })}
+						className={`text-sm px-3 py-1.5 rounded-full font-medium transition-colors ${
+							(source ?? "all") === key
+								? "bg-gold text-dark"
+								: "bg-white border border-border text-charcoal/70 hover:border-gold/40"
+						}`}
+					>
+						{label}{" "}
+						<span className="opacity-70">{sourceCounts[key as keyof typeof sourceCounts]}</span>
+					</a>
+				))}
+			</div>
+
+			{/* Status filter */}
 			<div className="flex gap-2 mb-6 flex-wrap">
 				{STATUS_COUNTS.map(({ key, label }) => (
 					<a
 						key={key}
-						href={key === "all" ? "/admin/leads" : `/admin/leads?status=${key}`}
+						href={filterHref({ status: key, source })}
 						className={`text-sm px-3 py-1.5 rounded-full font-medium transition-colors ${
 							(status ?? "all") === key
 								? "bg-navy text-white"
 								: "bg-white border border-border text-charcoal/70 hover:border-navy/40"
 						}`}
 					>
-						{label} <span className="opacity-70">{counts[key as keyof typeof counts]}</span>
+						{label}{" "}
+						<span className="opacity-70">{statusCounts[key as keyof typeof statusCounts]}</span>
 					</a>
 				))}
 			</div>
 
 			{filtered.length === 0 ? (
 				<div className="text-center py-20 text-charcoal/40">
-					<p className="text-lg">No leads yet</p>
-					<p className="text-sm mt-1">Contact form submissions will appear here.</p>
+					<p className="text-lg">No leads found</p>
+					<p className="text-sm mt-1">
+						{status || source
+							? "Try clearing the filters above."
+							: "Inquiries and consultation bookings will appear here."}
+					</p>
 				</div>
 			) : (
 				<div className="bg-white rounded-xl border border-border overflow-hidden shadow-sm">

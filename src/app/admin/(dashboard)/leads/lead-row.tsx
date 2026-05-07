@@ -38,6 +38,11 @@ export function LeadRow({ lead }: { lead: ContactSubmission }) {
 		year: "numeric",
 	});
 
+	const sourceConfig =
+		lead.source === "consultation"
+			? { label: "Consultation", color: "bg-gold/15 text-yellow-800" }
+			: { label: "Inquiry", color: "bg-blue-50 text-blue-700" };
+
 	return (
 		<>
 			<tr
@@ -46,7 +51,14 @@ export function LeadRow({ lead }: { lead: ContactSubmission }) {
 			>
 				<td className="px-4 py-3 text-sm text-charcoal/50 whitespace-nowrap">{date}</td>
 				<td className="px-4 py-3">
-					<div className="font-medium text-charcoal text-sm">{lead.name}</div>
+					<div className="flex items-center gap-2">
+						<span className="font-medium text-charcoal text-sm">{lead.name}</span>
+						<span
+							className={`hidden sm:inline-flex text-[10px] font-semibold px-1.5 py-0.5 rounded-full ${sourceConfig.color}`}
+						>
+							{sourceConfig.label}
+						</span>
+					</div>
 					<div className="text-xs text-charcoal/50">{lead.email}</div>
 				</td>
 				<td className="px-4 py-3 text-sm text-charcoal/70 hidden sm:table-cell">

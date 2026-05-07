@@ -6,7 +6,9 @@ export const contactSubmissions = pgTable("contact_submissions", {
 	email: text("email").notNull(),
 	phone: text("phone"),
 	service: text("service").notNull(),
-	message: text("message").notNull(),
+	message: text("message"),
+	// "inquiry" = contact form  |  "consultation" = booked a call
+	source: text("source").notNull().default("inquiry"),
 	status: text("status").notNull().default("new"),
 	notes: text("notes"),
 	createdAt: timestamp("created_at", { withTimezone: true }).defaultNow().notNull(),

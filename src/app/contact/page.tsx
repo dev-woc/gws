@@ -1,7 +1,7 @@
 import { Calendar, Mail, Phone } from "lucide-react";
 import type { Metadata } from "next";
+import { ConsultationForm } from "@/components/contact/consultation-form";
 import { ContactForm } from "@/components/contact/contact-form";
-import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
 	title: "Contact Us",
@@ -44,16 +44,13 @@ export default function ContactPage() {
 							<div className="bg-navy text-white rounded-2xl p-7">
 								<Calendar className="size-8 text-gold mb-4" />
 								<h3 className="font-[family-name:var(--font-playfair)] text-xl font-bold mb-2">
-									Prefer to Book Directly?
+									Book a Free Consultation
 								</h3>
-								<p className="text-white/70 text-sm leading-relaxed mb-5">
-									Schedule your free 30-minute consultation at a time that works for you.
+								<p className="text-white/70 text-sm leading-relaxed mb-6">
+									Ready to talk? Enter your info and we'll open the scheduler so you can pick a time
+									that works for you.
 								</p>
-								<Button asChild className="bg-gold hover:bg-gold/90 text-dark font-semibold w-full">
-									<a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
-										Schedule a Free Consultation
-									</a>
-								</Button>
+								<ConsultationForm calendlyUrl={calendlyUrl} />
 							</div>
 
 							<div className="bg-white rounded-2xl border border-border p-7">
