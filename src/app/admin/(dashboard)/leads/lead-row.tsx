@@ -38,6 +38,17 @@ export function LeadRow({ lead }: { lead: ContactSubmission }) {
 		year: "numeric",
 	});
 
+	const scheduledDate = lead.scheduledAt
+		? new Date(lead.scheduledAt).toLocaleString("en-US", {
+				month: "short",
+				day: "numeric",
+				year: "numeric",
+				hour: "numeric",
+				minute: "2-digit",
+				timeZoneName: "short",
+			})
+		: null;
+
 	const sourceConfig =
 		lead.source === "consultation"
 			? { label: "Consultation", color: "bg-gold/15 text-yellow-800" }
@@ -120,6 +131,9 @@ export function LeadRow({ lead }: { lead: ContactSubmission }) {
 										<span className="font-semibold">Service:</span>{" "}
 										{SERVICE_LABELS[lead.service] ?? lead.service}
 									</span>
+									{scheduledDate && (
+										<span className="text-gold font-semibold">Call: {scheduledDate}</span>
+									)}
 								</div>
 							</div>
 							<div>
