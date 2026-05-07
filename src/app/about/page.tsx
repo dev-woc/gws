@@ -1,6 +1,6 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import type { Metadata } from "next";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
@@ -54,20 +54,20 @@ export default function AboutPage() {
 								<p>
 									Financial stress is one of the leading causes of anxiety in American households.
 									Millions of individuals struggle with damaged credit, unmanageable debt, and a
-									complete lack of financial literacy — not because they lack discipline, but because
-									they have never been given the tools, knowledge, or personalized guidance to change
-									their financial trajectory.
+									complete lack of financial literacy — not because they lack discipline, but
+									because they have never been given the tools, knowledge, or personalized guidance
+									to change their financial trajectory.
 								</p>
 								<p>
-									Gordon Wealth Strategies LLC exists to solve this problem. We bridge the gap between
-									where our clients are financially and where they deserve to be — by offering expert
-									credit repair services, personalized financial coaching, and a clear, actionable
-									roadmap to wealth.
+									Gordon Wealth Strategies LLC exists to solve this problem. We bridge the gap
+									between where our clients are financially and where they deserve to be — by
+									offering expert credit repair services, personalized financial coaching, and a
+									clear, actionable roadmap to wealth.
 								</p>
 								<p>
-									Our clients are not just buying a service. They are investing in relief, clarity, and
-									hope around money. Every strategy we build is tailored to the individual — because
-									your financial situation is unique, and your solution should be too.
+									Our clients are not just buying a service. They are investing in relief, clarity,
+									and hope around money. Every strategy we build is tailored to the individual —
+									because your financial situation is unique, and your solution should be too.
 								</p>
 								<p>
 									Based in Florida, we serve clients statewide with a commitment to compliance,
@@ -126,7 +126,8 @@ export default function AboutPage() {
 						Ready to Work with Jamere?
 					</h2>
 					<p className="text-white/70 text-lg max-w-xl mx-auto mb-8">
-						Book a free consultation and let&apos;s build your personalized wealth strategy together.
+						Book a free consultation and let&apos;s build your personalized wealth strategy
+						together.
 					</p>
 					<Button asChild size="lg" className="bg-gold hover:bg-gold/90 text-dark font-semibold">
 						<Link href="/contact">Book Your Free Consultation</Link>

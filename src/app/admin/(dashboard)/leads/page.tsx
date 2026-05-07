@@ -59,10 +59,7 @@ export default async function LeadsPage({
 								: "bg-white border border-border text-charcoal/70 hover:border-navy/40"
 						}`}
 					>
-						{label}{" "}
-						<span className="opacity-70">
-							{counts[key as keyof typeof counts]}
-						</span>
+						{label} <span className="opacity-70">{counts[key as keyof typeof counts]}</span>
 					</a>
 				))}
 			</div>

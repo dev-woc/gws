@@ -16,7 +16,12 @@ export default function PrivacyPolicyPage() {
 						Privacy Policy
 					</h1>
 					<p className="text-white/60 text-sm">
-						Last updated: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+						Last updated:{" "}
+						{new Date().toLocaleDateString("en-US", {
+							year: "numeric",
+							month: "long",
+							day: "numeric",
+						})}
 					</p>
 				</div>
 			</section>
@@ -25,16 +30,15 @@ export default function PrivacyPolicyPage() {
 				<div className="container mx-auto px-4 max-w-4xl">
 					<div className="bg-white rounded-2xl border border-border p-8 md:p-12 shadow-sm space-y-10">
 						<div className="prose prose-sm max-w-none text-charcoal/80 leading-relaxed">
-
 							<section className="space-y-4">
 								<h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-navy">
 									1. Introduction
 								</h2>
 								<p>
 									Gordon Wealth Strategies LLC (&ldquo;we,&rdquo; &ldquo;us,&rdquo; or
-									&ldquo;our&rdquo;) operates the website at gordonwealthstrategies.com. This Privacy
-									Policy explains how we collect, use, and protect your personal information when you
-									visit our website or use our services.
+									&ldquo;our&rdquo;) operates the website at gordonwealthstrategies.com. This
+									Privacy Policy explains how we collect, use, and protect your personal information
+									when you visit our website or use our services.
 								</p>
 							</section>
 
@@ -71,7 +75,9 @@ export default function PrivacyPolicyPage() {
 								<p>We use the information we collect to:</p>
 								<ul className="list-disc pl-6 space-y-2">
 									<li>Respond to your inquiries and provide the services you request</li>
-									<li>Send you information about our credit repair and financial coaching services</li>
+									<li>
+										Send you information about our credit repair and financial coaching services
+									</li>
 									<li>Schedule consultations and follow up on service agreements</li>
 									<li>Analyze website traffic to improve our services and content</li>
 									<li>Comply with legal obligations</li>
@@ -92,13 +98,13 @@ export default function PrivacyPolicyPage() {
 										notification emails when you submit a contact form.
 									</li>
 									<li>
-										<strong>Google Analytics:</strong> For website traffic analysis. Google Analytics
-										data is anonymized and aggregated.
+										<strong>Google Analytics:</strong> For website traffic analysis. Google
+										Analytics data is anonymized and aggregated.
 									</li>
 									<li>
-										<strong>Calendly:</strong> If you use our scheduling link to book a consultation,
-										Calendly&apos;s privacy policy applies to information you provide through their
-										platform.
+										<strong>Calendly:</strong> If you use our scheduling link to book a
+										consultation, Calendly&apos;s privacy policy applies to information you provide
+										through their platform.
 									</li>
 									<li>
 										<strong>Law enforcement or legal process:</strong> When required by law or to
@@ -114,8 +120,8 @@ export default function PrivacyPolicyPage() {
 								<p>
 									We implement reasonable security measures to protect your personal information.
 									Contact form submissions are transmitted over HTTPS (SSL/TLS encryption). However,
-									no method of transmission over the internet is 100% secure, and we cannot guarantee
-									absolute security.
+									no method of transmission over the internet is 100% secure, and we cannot
+									guarantee absolute security.
 								</p>
 							</section>
 
@@ -165,9 +171,7 @@ export default function PrivacyPolicyPage() {
 								<h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-navy">
 									8. Contact Us
 								</h2>
-								<p>
-									If you have questions about this Privacy Policy, please contact us:
-								</p>
+								<p>If you have questions about this Privacy Policy, please contact us:</p>
 								<ul className="list-none space-y-1">
 									<li>
 										<strong>Gordon Wealth Strategies LLC</strong>
@@ -190,7 +194,6 @@ export default function PrivacyPolicyPage() {
 									</li>
 								</ul>
 							</section>
-
 						</div>
 					</div>
 				</div>

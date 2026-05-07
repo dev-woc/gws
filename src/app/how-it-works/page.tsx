@@ -1,8 +1,8 @@
-import Link from "next/link";
+import { FileText, Map as MapIcon, Phone, Search, TrendingUp } from "lucide-react";
 import type { Metadata } from "next";
-import { FileText, Map, Phone, Search, TrendingUp } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Link from "next/link";
 import { ProcessTimeline } from "@/components/sections/process-timeline";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
 	title: "How It Works",
@@ -27,7 +27,7 @@ const steps = [
 	},
 	{
 		number: 3,
-		icon: <Map className="size-6" />,
+		icon: <MapIcon className="size-6" />,
 		title: "Strategy Development",
 		description:
 			"We build your personalized credit repair and wealth roadmap — clear steps, realistic timelines, and measurable goals.",
@@ -88,14 +88,12 @@ export default function HowItWorksPage() {
 							{
 								label: "Timeline",
 								value: "6–12 Months",
-								description:
-									"Most clients see meaningful progress within the first 90 days.",
+								description: "Most clients see meaningful progress within the first 90 days.",
 							},
 							{
 								label: "Communication",
 								value: "Monthly Updates",
-								description:
-									"You receive a full status update on every active dispute each month.",
+								description: "You receive a full status update on every active dispute each month.",
 							},
 							{
 								label: "Compliance",

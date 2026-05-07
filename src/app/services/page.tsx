@@ -1,6 +1,6 @@
-import Link from "next/link";
-import type { Metadata } from "next";
 import { AlertCircle, CheckCircle } from "lucide-react";
+import type { Metadata } from "next";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
@@ -68,18 +68,19 @@ export default function ServicesPage() {
 							</div>
 							<div className="space-y-4 text-sm text-charcoal/70 leading-relaxed">
 								<p>
-									You have the right to dispute inaccurate information on your credit report directly
-									with the credit bureaus at no cost. The bureaus are required to investigate disputes
-									within 30 days.
+									You have the right to dispute inaccurate information on your credit report
+									directly with the credit bureaus at no cost. The bureaus are required to
+									investigate disputes within 30 days.
 								</p>
 								<p>
 									Gordon Wealth Strategies does not guarantee the removal of accurate, timely, or
-									verifiable information from your credit report. No credit services organization can
-									legally make such a guarantee.
+									verifiable information from your credit report. No credit services organization
+									can legally make such a guarantee.
 								</p>
 								<p>
-									We do not collect any fees before we have performed the services we have contracted
-									to perform, in compliance with the Credit Repair Organizations Act (CROA).
+									We do not collect any fees before we have performed the services we have
+									contracted to perform, in compliance with the Credit Repair Organizations Act
+									(CROA).
 								</p>
 							</div>
 						</div>

@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
 import { Calendar, Mail, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact/contact-form";
+import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
 	title: "Contact Us",
@@ -49,10 +49,7 @@ export default function ContactPage() {
 								<p className="text-white/70 text-sm leading-relaxed mb-5">
 									Schedule your free 30-minute consultation at a time that works for you.
 								</p>
-								<Button
-									asChild
-									className="bg-gold hover:bg-gold/90 text-dark font-semibold w-full"
-								>
+								<Button asChild className="bg-gold hover:bg-gold/90 text-dark font-semibold w-full">
 									<a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
 										Schedule a Free Consultation
 									</a>

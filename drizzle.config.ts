@@ -5,6 +5,7 @@ export default defineConfig({
 	schema: "./src/lib/db/schema.ts",
 	out: "./drizzle",
 	dbCredentials: {
+		// biome-ignore lint/style/noNonNullAssertion: DATABASE_URL must be set for migrations
 		url: process.env.DATABASE_URL!,
 	},
 });

@@ -3,15 +3,18 @@ import { CheckCircle } from "lucide-react";
 const painPoints = [
 	{
 		pain: "I don't know where to start",
-		solution: "We start with a free consultation to assess your situation and map a clear path forward.",
+		solution:
+			"We start with a free consultation to assess your situation and map a clear path forward.",
 	},
 	{
 		pain: "I've been denied for loans because of my credit",
-		solution: "We identify and dispute the exact items causing denials — professionally and compliantly.",
+		solution:
+			"We identify and dispute the exact items causing denials — professionally and compliantly.",
 	},
 	{
 		pain: "I'm living paycheck to paycheck and can't get ahead",
-		solution: "Our coaching builds a realistic budget and debt payoff plan tailored to your income.",
+		solution:
+			"Our coaching builds a realistic budget and debt payoff plan tailored to your income.",
 	},
 	{
 		pain: "I want to build wealth but my credit is holding me back",

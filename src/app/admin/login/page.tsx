@@ -46,7 +46,6 @@ export default async function AdminLoginPage({
 							name="password"
 							type="password"
 							required
-							autoFocus
 							className="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-2.5 text-white placeholder-white/30 focus:outline-none focus:border-gold/60 focus:ring-1 focus:ring-gold/40 transition-colors"
 							placeholder="Enter admin password"
 						/>

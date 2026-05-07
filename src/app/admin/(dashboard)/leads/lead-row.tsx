@@ -58,7 +58,11 @@ export function LeadRow({ lead }: { lead: ContactSubmission }) {
 				<td className="px-4 py-3 text-sm text-charcoal/60 hidden lg:table-cell max-w-xs">
 					<span className="line-clamp-1">{lead.message}</span>
 				</td>
-				<td className="px-4 py-3" onClick={(e) => e.stopPropagation()}>
+				<td
+					className="px-4 py-3"
+					onClick={(e) => e.stopPropagation()}
+					onKeyDown={(e) => e.stopPropagation()}
+				>
 					<select
 						value={lead.status}
 						onChange={(e) => handleStatusChange(e.target.value)}
@@ -119,6 +123,7 @@ export function LeadRow({ lead }: { lead: ContactSubmission }) {
 									onClick={(e) => e.stopPropagation()}
 								/>
 								<button
+									type="button"
 									onClick={(e) => {
 										e.stopPropagation();
 										handleSaveNotes();

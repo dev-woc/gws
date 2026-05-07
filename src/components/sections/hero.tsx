@@ -10,16 +10,19 @@ export function Hero() {
 					<div className="order-2 md:order-1">
 						<div className="w-16 h-0.5 bg-gold mb-6" />
 						<h1 className="font-[family-name:var(--font-playfair)] text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-							Repair Your Credit.{" "}
-							<span className="text-gold">Rebuild Your Life.</span>{" "}
-							Build Your Wealth.
+							Repair Your Credit. <span className="text-gold">Rebuild Your Life.</span> Build Your
+							Wealth.
 						</h1>
 						<p className="text-white/80 text-lg leading-relaxed mb-8 max-w-xl">
 							Gordon Wealth Strategies helps individuals repair damaged credit, eliminate financial
 							stress, and build a clear path to lasting wealth — one strategy at a time.
 						</p>
 						<div className="flex flex-col sm:flex-row gap-4">
-							<Button asChild size="lg" className="bg-gold hover:bg-gold/90 text-dark font-semibold">
+							<Button
+								asChild
+								size="lg"
+								className="bg-gold hover:bg-gold/90 text-dark font-semibold"
+							>
 								<Link href="/contact">Book Your Free Consultation</Link>
 							</Button>
 							<Button

@@ -32,15 +32,14 @@ export default function TermsPage() {
 						<div className="bg-gold/10 border border-gold/30 rounded-xl p-5 mb-6">
 							<p className="text-sm text-charcoal/80 leading-relaxed">
 								<strong className="text-navy">Important CROA Notice:</strong> You have the right to
-								dispute inaccurate information on your credit report directly with the credit bureaus
-								at no cost. Gordon Wealth Strategies LLC does not guarantee the removal of accurate,
-								timely, or verifiable information from your credit report. No credit services
-								organization can legally make such a guarantee.
+								dispute inaccurate information on your credit report directly with the credit
+								bureaus at no cost. Gordon Wealth Strategies LLC does not guarantee the removal of
+								accurate, timely, or verifiable information from your credit report. No credit
+								services organization can legally make such a guarantee.
 							</p>
 						</div>
 
 						<div className="prose prose-sm max-w-none text-charcoal/80 leading-relaxed">
-
 							<section className="space-y-4">
 								<h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-navy">
 									1. Acceptance of Terms
@@ -57,8 +56,8 @@ export default function TermsPage() {
 									2. Services Description
 								</h2>
 								<p>
-									Gordon Wealth Strategies LLC provides credit repair services and personal financial
-									coaching. Our services include:
+									Gordon Wealth Strategies LLC provides credit repair services and personal
+									financial coaching. Our services include:
 								</p>
 								<ul className="list-disc pl-6 space-y-2">
 									<li>Review and analysis of credit bureau reports</li>
@@ -68,8 +67,8 @@ export default function TermsPage() {
 									<li>Debt elimination strategy and accountability coaching</li>
 								</ul>
 								<p>
-									The content on this website is provided for informational purposes only and does not
-									constitute financial, legal, or investment advice.
+									The content on this website is provided for informational purposes only and does
+									not constitute financial, legal, or investment advice.
 								</p>
 							</section>
 
@@ -77,11 +76,14 @@ export default function TermsPage() {
 								<h2 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-navy">
 									3. Credit Repair Organizations Act (CROA) Compliance
 								</h2>
-								<p>Gordon Wealth Strategies LLC operates in compliance with the federal Credit Repair Organizations Act (CROA). In accordance with CROA:</p>
+								<p>
+									Gordon Wealth Strategies LLC operates in compliance with the federal Credit Repair
+									Organizations Act (CROA). In accordance with CROA:
+								</p>
 								<ul className="list-disc pl-6 space-y-2">
 									<li>
-										We do not collect any fees before fully performing the services we have agreed to
-										provide.
+										We do not collect any fees before fully performing the services we have agreed
+										to provide.
 									</li>
 									<li>
 										We cannot guarantee the removal of accurate, timely, or verifiable information
@@ -104,9 +106,9 @@ export default function TermsPage() {
 								</h2>
 								<p>
 									Gordon Wealth Strategies LLC makes no guarantees regarding specific credit score
-									improvements or outcomes. Results vary based on individual circumstances, including
-									the nature of negative items on your credit report, creditor responses, and your
-									financial behavior during the engagement.
+									improvements or outcomes. Results vary based on individual circumstances,
+									including the nature of negative items on your credit report, creditor responses,
+									and your financial behavior during the engagement.
 								</p>
 							</section>
 
@@ -117,8 +119,13 @@ export default function TermsPage() {
 								<p>By engaging our services, you agree to:</p>
 								<ul className="list-disc pl-6 space-y-2">
 									<li>Provide accurate and truthful information about your financial situation</li>
-									<li>Not apply for new credit, incur new debt, or make late payments during active disputes without notifying us</li>
-									<li>Cooperate with our requests for documentation necessary to complete your case</li>
+									<li>
+										Not apply for new credit, incur new debt, or make late payments during active
+										disputes without notifying us
+									</li>
+									<li>
+										Cooperate with our requests for documentation necessary to complete your case
+									</li>
 									<li>Maintain timely payments on existing accounts during our engagement</li>
 								</ul>
 							</section>
@@ -142,8 +149,8 @@ export default function TermsPage() {
 								<p>
 									Gordon Wealth Strategies LLC shall not be liable for any indirect, incidental, or
 									consequential damages arising from your use of our website or services. Our total
-									liability shall not exceed the amount you paid for the specific service giving rise
-									to the claim.
+									liability shall not exceed the amount you paid for the specific service giving
+									rise to the claim.
 								</p>
 							</section>
 
@@ -184,7 +191,6 @@ export default function TermsPage() {
 									</li>
 								</ul>
 							</section>
-
 						</div>
 					</div>
 				</div>
