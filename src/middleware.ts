@@ -2,18 +2,22 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-	const allCookies = request.cookies.getAll();
-	const sessionCookie = allCookies.find(c => c.name.includes("neon-auth.session_token"));
+	const { pathname } = request.nextUrl;
 
-	if (!sessionCookie?.value) {
-		const loginUrl = new URL("/login", request.url);
-		loginUrl.searchParams.set("callbackUrl", request.nextUrl.pathname);
-		return NextResponse.redirect(loginUrl);
+	// Admin routes — skip login page itself
+	if (pathname.startsWith("/admin") && !pathname.startsWith("/admin/login")) {
+		const token = request.cookies.get("admin_token")?.value;
+		const adminToken = process.env.ADMIN_TOKEN;
+
+		if (!adminToken || token !== adminToken) {
+			const loginUrl = new URL("/admin/login", request.url);
+			return NextResponse.redirect(loginUrl);
+		}
 	}
 
 	return NextResponse.next();
 }
 
 export const config = {
-	matcher: ["/dashboard", "/dashboard/:path*"],
+	matcher: ["/admin/:path*"],
 };

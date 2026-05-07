@@ -2,6 +2,8 @@
 
 import { headers } from "next/headers";
 import { Resend } from "resend";
+import { db } from "@/lib/db";
+import { contactSubmissions } from "@/lib/db/schema";
 import { createRateLimiter } from "@/lib/rate-limit";
 import { contactFormSchema } from "@/lib/validations";
 
@@ -46,6 +48,14 @@ export async function submitContactForm(formData: FormData): Promise<ActionResul
 				? "Financial Coaching"
 				: "Credit Repair & Financial Coaching";
 
+	// Save to database
+	try {
+		await db.insert(contactSubmissions).values({ name, email, phone, service, message });
+	} catch {
+		// DB failure shouldn't block the user — email still sends
+	}
+
+	// Send email notification
 	try {
 		await resend.emails.send({
 			from: "GWS Website <noreply@gordonwealthstrategies.com>",
