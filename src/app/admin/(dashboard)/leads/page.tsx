@@ -2,6 +2,7 @@ import { desc } from "drizzle-orm";
 import type { Metadata } from "next";
 import { db } from "@/lib/db";
 import { contactSubmissions } from "@/lib/db/schema";
+import { AddLeadDialog } from "./add-lead-dialog";
 import { LeadRow } from "./lead-row";
 
 export const metadata: Metadata = { title: "Leads — GWS Admin" };
@@ -67,7 +68,10 @@ export default async function LeadsPage({
 				<h1 className="font-[family-name:var(--font-playfair)] text-2xl font-bold text-navy">
 					Leads
 				</h1>
-				<span className="text-sm text-charcoal/50">{allLeads.length} total</span>
+				<div className="flex items-center gap-3">
+					<span className="text-sm text-charcoal/50">{allLeads.length} total</span>
+					<AddLeadDialog />
+				</div>
 			</div>
 
 			{/* Source filter */}
