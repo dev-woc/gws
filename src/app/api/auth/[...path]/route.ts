@@ -1,3 +1,10 @@
-import { authApiHandler } from "@neondatabase/auth/next/server";
+import { NextResponse } from "next/server";
 
-export const { GET, POST } = authApiHandler();
+// Stub for MVP marketing site — restore for Phase 3 client portal
+export function GET() {
+	return NextResponse.json({ error: "Auth not configured" }, { status: 503 });
+}
+
+export function POST() {
+	return NextResponse.json({ error: "Auth not configured" }, { status: 503 });
+}
