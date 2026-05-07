@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@neondatabase/auth/ui/tailwind";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -44,6 +43,13 @@
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-ring: var(--sidebar-ring);
+	--color-navy: var(--gws-navy);
+	--color-gold: var(--gws-gold);
+	--color-dark: var(--gws-dark);
+	--color-offwhite: var(--gws-offwhite);
+	--color-charcoal: var(--gws-charcoal);
+	--font-display: var(--font-playfair);
+	--font-body: var(--font-montserrat);
 }
 
 :root {
@@ -79,6 +85,13 @@
 	--sidebar-accent-foreground: oklch(0.205 0 0);
 	--sidebar-border: oklch(0.922 0 0);
 	--sidebar-ring: oklch(0.708 0 0);
+
+  /* GWS Brand Colors */
+  --gws-navy: oklch(0.283 0.109 256.8);
+  --gws-gold: oklch(0.726 0.125 78.2);
+  --gws-dark: oklch(0.093 0.012 261.5);
+  --gws-offwhite: oklch(0.971 0.003 91.3);
+  --gws-charcoal: oklch(0.245 0 0);
 }
 
 .dark {
